@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: os-project
+spec:
+  selector:
+    matchLabels:
+      name: os-project
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        name: os-project
+    spec:
+      containers:
+      - name: myapp
+        image: eslam2023/myimage
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80

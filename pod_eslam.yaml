@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypodeslam
+  labels:
+    label-name-3: label-value
+spec:
+  containers:
+  - name: mycontainer3
+    image: eslam2023/myimage
+    resources:
+      limits:
+        memory: "512Mi"
+        cpu: "1"
